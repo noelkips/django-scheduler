@@ -16,6 +16,7 @@ among other information of the image tagged
 
 The Project is done by
 1. Noel K Langat (noellangat28@gmial.com)
+2. https://wa.me/254719731264
 
 **Here is the design**
 
