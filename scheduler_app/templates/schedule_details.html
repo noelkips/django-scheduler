@@ -1,0 +1,79 @@
+{% extends 'schedule_dashboard.html'%}
+{% load static%}
+{%block content%}
+    <section id="subsection-with-lists" class="section-with-bg">
+
+     <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>My Schedule details</h2>
+          <p> Days remaining : {{remaining_days}}</p>
+          <p> Creation Date : {{creation_date}}</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="subsection-with-list-box">
+              <a href="">General Information</a>
+              <h5>Title: {{title}}</h5>
+                 <p style="text-transform: capitalize;">{{description}}</p>
+            </div>
+          </div>
+
+            <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="subsection-with-list-box" style="text-transform: capitalize;">
+              <a href="">Timeline</a>
+              <h5>start time: {{start_time}}</h5>
+                <h5>end time:  {{end_time}}</h5>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="section-header">
+        <h2>Task Tiff Image Details </h2>
+        <p> Details below describe this tasks further given the tiff image associated with this task</p>
+        <p> The values in the left columns are tags and the values in the right are values for tags</p>
+      </div>
+      <div class="row g-0">
+        <div class="col-lg-6  mt-5 mt-lg-0 d-flex align-items-stretch">
+        <div class="subsection-with-list-box">
+              {% if tiff_image_details %}
+                  
+                  <table>
+                      <thead>
+                          <tr>
+                              <th colspan="3">Tiff Image Tag</th>
+                              <th colspan="4">Tiff Image Value</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for tag, value in tiff_image_details.items %}
+                              <tr>
+                                  <td colspan="3">{{tag }}</td>
+                                  <td colspan="4">{{ value }}</td>
+                              </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              {% else %}
+                  <p>Tiff image details not available.</p>
+              {% endif %}
+              </div>
+          
+      </div>
+
+      <div class="col-lg-6">
+  
+        <img src="{{schedule.image.url}}" alt="" class="img-fluid">
+      
+      </div>
+    </div>
+    </section>
+
+
+{%endblock%}
+
+
+

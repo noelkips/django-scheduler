@@ -1,0 +1,36 @@
+{% extends 'schedule_dashboard.html'%}
+{% load static%}
+{%block content%}
+    <section id="add_tea_block">
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>My Tasks</h2>
+          <p>Fill in the form below to update tasks from schedule</p>
+        </div>
+
+        <div class="row g-0">
+
+            <div class="col-lg-6 subsection-info-info mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="" method="post" role="form" class="subsection-info-form">
+              {% csrf_token %}
+              {{form.as_p}}
+                <div class="text-center"><button class="responsive-button" type="submit"><span class="button_color">Update</span></button></div>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <img src="{% static 'img/logo.jpg' %}" alt="" class="img-fluid">
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+{%endblock%}
+
+

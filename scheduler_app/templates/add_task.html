@@ -1,0 +1,59 @@
+{% extends 'schedule_dashboard.html'%}
+{% load static%}
+{%block content%}
+    <section id="add_tea_block">
+
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Schedules</h2>
+          <p>Fill in the form below to add tasks to your schedule</p>
+        </div>
+
+        <div class="row g-0">
+          <div class="col-lg-4">
+            <img src="{% static 'img/logo.jpg' %}" alt="" class="img-fluid">
+          </div>
+            <div class="col-lg-6 subsection-info-info mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="" method="post" role="form" class="subsection-info-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                 <div class="form-group">
+                  <label for="title">Schedule title</label>
+                  <input type="text" class="form-control" name="title" id="title" required>
+                 </div>
+                <div class="form-group col-md-6">
+                  <label for="start_time">Start Time</label>
+                  <input type="datetime-local" name="start_time" id="start_time" required>
+                </div>
+                <div class="form-group col-md-5">
+                  <label for="end_time">End Time</label>
+                  <input type="datetime-local" name="end_time" id="end_time" required>
+                </div>
+                  <div class="form-group">
+                  <label for="description">Description</label>
+                  <input type="text" class="form-control" name="description" id="description" required>
+                 </div>
+                 <div class="form-group col-md-6">
+                  <label for="image">Tiff image</label>
+                  <input type="file" class="form-control" name="image" id="image" required>
+                </div>
+              </div>
+                <br>
+                <div class="text-center"><button class="responsive-button" type="submit"><span class="button_color">Add Task</span></button></div>
+            </form>
+          </div>
+
+         
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+{%endblock%}
+
+
+

@@ -1,0 +1,220 @@
+{% extends 'schedule_dashboard.html'%}
+{% load static%}
+{%block content%}
+    <section id="subsection-with-lists" class="section-with-bg">
+
+     <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>My Schedules</h2>
+          <p> Click on the schedule tittle to see more information on schedule and tiff image descriping the task or update  schedule</p>
+        </div>
+
+        <div class="row"> {%for schedule in schedules%}
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="subsection-with-list-box">
+                        
+              <h3><a href="">{{schedule.title}}</a></h3>
+              <h5>start time: <i>{{schedule.start_time}}</i></h5>
+                 <hh5>Days remaining: <i>{{schedule.days_remaining}}</i></h4>
+                <a class="responsive-button" href="{% url 'schedule_detail' pk=schedule.pk %}"><span class="block-button">See More</span></a>
+
+            </div>
+          </div><br>
+          {%endfor%}
+
+        </div>
+
+      </div>
+    
+  
+    </section>
+
+
+     <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static 'img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3>Scheduler LTD, <i>your best event management company</i></h3>
+            <p class="fst-italic">
+          
+                Welcome to Scheduler LTD, your go-to solution for efficient and streamlined scheduling. Our web-based scheduler application is designed to simplify the management of appointments, tasks, and events.
+                With Scheduler LTD, you can effortlessly organize your schedule, collaborate with team members, and ensure smooth coordination of your activities.
+            </p>
+          
+            <ul>
+              <li><i class="ri-check-double-line"></i> At Scheduler LTD, our vision is to empower individuals and businesses to manage their time effectively</li>
+              <li><i class="ri-check-double-line"></i>Our mission is to provide a reliable and user-friendly scheduling solution that simplifies the coordination of tasks and appointments, helping our users save time and optimize their productivity.</li>
+            </ul>
+            <p>
+              If you have any questions, feedback, or partnership inquiries, feel free to reach out to us
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+     <!-- ======= Testimonials Section ======= -->
+     <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Noel Langat</h3>
+                <h4>Ceo &amp; AMIREF</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Scheduler LTD has revolutionized the way I manage my appointments and tasks. It's incredibly user-friendly and intuitive, allowing me to effortlessly organize my schedule. I highly recommend it!" - Noel L.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/testimonials/testimonials-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Erick smith</h3>
+                <h4>Director  &amp; Freelancer WINNERS SOLUTIONS</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "I've tried several scheduling tools, but none compare to Scheduler LTD. It offers a seamless and efficient way to coordinate appointments with my team. It has truly streamlined our workflow."                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/testimonials/testimonials-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Ntala Karim</h3>
+                <h4>Store Owner <i>MABATI LTD</i></h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Scheduler LTD has been a game-changer for my business. With its powerful features, I can easily schedule and manage multiple client appointments. It has saved me valuable time and improved my productivity." - Emily S.
+
+                  "As a busy professional, I rely on Scheduler LTD to keep me on track. Its reminders and notifications ensure I never miss an important meeting. It's a must-have tool for anyone with a hectic schedule.                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/testimonials/testimonials-4.jpg' %}" class="testimonial-img" alt="">
+                <h3>Matt Amisi</h3>
+                <h4>Freelancer </h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Scheduler LTD is an exceptional scheduling solution. The interface is clean and visually appealing, making it a pleasure to use. It has simplified my life and allowed me to focus on what matters most."                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/testimonials/testimonials-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>John Sunguli</h3>
+                <h4>Entrepreneur</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "I can't imagine my life without Scheduler LTD. It has become an indispensable tool for managing my personal and professional commitments. The ability to access my schedule from anywhere and easily share it with others has made my life so much easier. Thank you, Scheduler LTD!"                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+    <section id="subscribe">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-header">
+          <h2>Newsletter</h2>
+          <P>"Stay up-to-date with the latest news and updates from Scheduler LTD! Subscribe to our newsletter and be the first to know about new features, important announcements, and helpful tips to make the most of our scheduler application. Don't miss out on exclusive content and special offers! Join our growing community of users today. Sign up for the Scheduler LTD newsletter and never miss a beat!"</P>
+        </div>
+
+        <form method="POST" action="#">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10 d-flex">
+              <input type="text" class="form-control" placeholder="Enter your Email">
+              <button type="submit" class="responsive-button">Subscribe</button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </section>
+     <!-- ======= Contact Section ======= -->
+     <section id="contact" class="section-bg">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Nihil officia ut sint molestiae tenetur.</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+            
+              <address>Kimati street, P.O BOX 234-20400, Kenya</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1254 719 731 264</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@schedulerltd.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class=" text-center"><button class="responsive-button" type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+{%endblock%}
+
+
+

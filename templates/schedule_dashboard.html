@@ -1,0 +1,87 @@
+{% load static %}
+{% include 'base_header.html'%}
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center ">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <h2><a href="{% url 'view_tasks' %}">Scheduler<span>LTD</span></a></h2>
+        <!-- <a href="{% url 'view_tasks' %}" class="scrollto"><img src="{% static 'img/logo.png' %}" alt="" title=""></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'view_tasks'%}">Tasks</a></li>
+            <li><a href="{% url 'add_task' %}">new task</a></li>
+            <li><a href="{% url 'view_tasks'%}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'view_tasks'%}#contact">Contact Us</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      
+    </div>
+  </header>
+        <main id="main">
+            {% block content%}
+            {% endblock content%}
+        </main>
+       <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="{% static 'img/logo.png' %}" alt="TheEvenet">
+            <p> We are the leading scheduler service provider with more than five decades of 
+              customer service and have trusted products
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="{%url 'view_tasks' %}">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{%url 'add_task' %}">new event</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">past events</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Book service</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">about us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              schuler Ltd <br>
+             23445, 204000<br>
+            Kenya <br>
+              <strong>Phone:</strong> +254 719 731 264<br>
+              <strong>Email:</strong> info@schedulerltd.com<br>
+            </p>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   
+  </footer><!-- End  Footer -->
+
+  {% include 'base_js.html' %}
